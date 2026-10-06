@@ -1,0 +1,18 @@
+{
+  "name": "locke-farm-douyin",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "洛克农场 —— 抖音去水印解析与下载中转服务（零第三方依赖，不需要浏览器）",
+  "license": "MIT",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "probe": "node src/cli.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {}
+}

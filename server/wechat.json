@@ -1,0 +1,33 @@
+{
+  "_说明": [
+    "洛克农场 · 抖音去水印后端 —— 微信内容安全配置",
+    "每个字段都可以被同名环境变量覆盖（WX_APPID / WX_SECRET / WX_TOKEN / WX_AES_KEY / PUBLIC_BASE_URL / SEC_SCENE）。",
+    "改完这个文件必须重启后端服务才生效。"
+  ],
+
+  "appid": "wx727a9e58496c2012",
+
+  "_secret": "必填。微信公众平台 → 开发管理 → 开发设置 → AppSecret(小程序密钥)。32 位。只填在服务器上，绝对不要写进小程序代码。",
+  "secret": "",
+
+  "_token": "消息推送用的 Token，随便起一个 3~32 位字母数字。要与小程序后台「消息推送配置」里填的 Token 完全一致，否则收不到异步检测结果。用环境变量 WX_TOKEN 覆盖。",
+  "token": "",
+
+  "_encodingAesKey": "用「明文模式」时这个字段服务端用不到，留空即可。微信后台那个 EncodingAESKey 输入框是必填的（不满 43 位不让保存），点它右边的「随机生成」按钮随便生成一个就行 —— 明文模式下它不参与加解密，不需要同步到这里。",
+  "encodingAesKey": "",
+
+  "_publicBaseUrl": "对外可访问的地址。mediaCheckAsync 需要微信的检测服务器能下载到图片，所以必须是公网域名，不能是本机地址。用环境变量 PUBLIC_BASE_URL 覆盖。",
+  "publicBaseUrl": "",
+
+  "_scene": "内容安全场景：1 资料；2 评论；3 论坛；4 社交日志。本小程序是工具类，用 2。",
+  "scene": 2,
+
+  "_maxImagesPerResult": "一条解析结果里最多送检几张图片，防止图集把配额打光。",
+  "maxImagesPerResult": 10,
+
+  "_demoKey": "留空即可。留空时演示接口只允许在服务器本机(127.0.0.1)访问。",
+  "demoKey": "",
+
+  "_skipCheck": "调试开关。true = 跳过内容安全检测（仅本地开发用，正式环境必须 false）。",
+  "skipCheck": false
+}

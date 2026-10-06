@@ -1,0 +1,38 @@
+# 洛克农场 · 抖音去水印服务 —— Docker 部署
+#
+#   启动：docker compose up -d
+#   日志：docker compose logs -f
+#   停止：docker compose down
+#
+# 说明：只监听 127.0.0.1:3000，由宿主机 Nginx 反代并负责 HTTPS。
+#       如果宿主机的 Nginx 不在 Docker 里，请保持 127.0.0.1 绑定；
+#       若 Nginx 也在 Docker 网络内，改成 "3000:3000" 并去掉 127.0.0.1 前缀。
+
+services:
+  dyapi:
+    build: .
+    image: locke-farm-dyapi:latest
+    container_name: locke-farm-dyapi
+    restart: unless-stopped
+
+    ports:
+      - "127.0.0.1:3000:3000"
+
+    environment:
+      TZ: Asia/Shanghai
+      PORT: "3000"
+      HOST: "0.0.0.0"
+      # 抖音对单 IP 有频率限制，服务器小就调低
+      MAX_CONCURRENT: "8"
+      PARSE_TIMEOUT_MS: "20000"
+      # ttwid 落盘，重启后免去重新注册
+      TTWID_CACHE_FILE: "/data/ttwid.json"
+
+    volumes:
+      - ./data:/data
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,62 @@
+{
+	"pages": [
+		{
+			"path": "pages/douyin/douyin",
+			"style": {
+				"navigationBarTitleText": "抖音去水印",
+				"navigationBarBackgroundColor": "#1A1A2E",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/power-query/power-query",
+			"style": {
+				"navigationBarTitleText": "王者战力查询",
+				"navigationBarBackgroundColor": "#1A1A2E",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hero-list/hero-list",
+			"style": {
+				"navigationBarTitleText": "选择英雄",
+				"navigationBarBackgroundColor": "#1A1A2E",
+				"navigationBarTextStyle": "white"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "洛克农场",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F5F5F5",
+		"mp-weixin": {
+			"enableShareTimeline": true
+		}
+	},
+	"tabBar": {
+		"color": "#999999",
+		"selectedColor": "#FF6B8A",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [
+			{
+				"pagePath": "pages/douyin/douyin",
+				"text": "去水印",
+				"iconPath": "static/tabbar/douyin.png",
+				"selectedIconPath": "static/tabbar/douyin-active.png"
+			},
+			{
+				"pagePath": "pages/power-query/power-query",
+				"text": "战力查询",
+				"iconPath": "static/tabbar/power.png",
+				"selectedIconPath": "static/tabbar/power-active.png"
+			}
+		]
+	},
+	"uniIdRouter": {},
+	"easycom": {
+		"autoscan": true,
+		"custom": {}
+	}
+}
